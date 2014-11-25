@@ -1,0 +1,88 @@
+$pink: #f05a72;
+$red: #e61d35;
+$lightorange: #f36f3a;
+$orange: #f04e23;
+$yellow: #f99d34;
+
+@font-face {
+  font-family: 'Conv_CircularStd-Bold';
+  src: url('../fonts/CircularStd-Bold.eot');
+  src: local('☺'), url('../fonts/CircularStd-Bold.woff') format('woff'), url('../fonts/CircularStd-Bold.ttf') format('truetype'), url('../fonts/CircularStd-Bold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin animate($color,$end,$name) {
+  @keyframes $name {
+    0% {
+      color: $color;
+    }
+    50% {
+      color: $end;
+    }
+    100% {
+      color: $color;
+    }
+  }
+}
+
+
+body {
+  margin: 0;
+  background: #ebecea;
+  color: #231f20;
+  font-family: 'Conv_CircularStd-Bold', Circular Std Bold;
+}
+
+.wrapper {
+  width: 840px;
+  margin: 0 auto;
+}
+
+.content {
+  margin-top: 75px;
+  font-size: 47px;
+
+  p {
+    margin: 0 0 0.4em 0;
+    line-height: 1.14em;
+  }
+
+  .lc {
+    margin-top: 88px;
+    padding-bottom: 75px;
+  }
+
+}
+
+.pink {
+  text-decoration: underline;
+  color: $pink;
+  animation: pink 0.15s infinite;
+}
+.red {
+  text-decoration: underline;
+  color: $red;
+  animation: red 0.15s infinite;
+}
+.lightorange {
+  text-decoration: underline;
+  color: $lightorange;
+  animation: lightorange 0.15s infinite;
+}
+.orange {
+  text-decoration: underline;
+  color: $orange;
+  animation: orange 0.15s infinite;
+}
+.yellow {
+  text-decoration: underline;
+  color: $yellow;
+  animation: ylw 0.15s infinite;
+}
+
+@include animate($pink,$red,pink);
+@include animate($red,$pink,red);
+@include animate($lightorange,$orange,lightorange);
+@include animate($orange,$yellow,orange);
+@include animate($yellow,$lightorange,ylw);
